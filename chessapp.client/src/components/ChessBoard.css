@@ -1,0 +1,109 @@
+.board-wrap {
+  display: grid;
+  grid-template-areas:
+    ". file-labels"
+    "rank-labels board";
+  gap: 4px;
+  user-select: none;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: min(480px, 90vw);
+  height: min(480px, 90vw);
+  border: 10px solid var(--gold);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(201,168,76,0.2), var(--shadow);
+}
+
+/* Labels */
+.rank-labels, .file-labels {
+  display: flex;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+}
+.rank-labels {
+  flex-direction: column;
+  justify-content: space-around;
+  height: min(480px, 90vw);
+  width: 18px;
+  align-items: center;
+  align-self: flex-start;
+}
+.file-labels {
+  width: min(480px, 90vw);
+  justify-content: space-around;
+}
+.rank-labels { grid-area: rank-labels; }
+.file-labels { grid-area: file-labels; }
+.board       { grid-area: board; }
+
+.square {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+  overflow: visible;
+}
+.square.light { background: var(--white-sq); }
+.square.dark  { background: var(--black-sq); }
+
+.square.selected  { background: var(--selected) !important; }
+.square.last-move { filter: brightness(1.18); }
+.square.in-check  { background: var(--check-sq) !important; }
+.square.valid-cap { background: var(--valid-cap) !important; }
+
+.square:hover { filter: brightness(1.1); }
+
+/* Valid move dot */
+.valid-dot {
+  width: 28%;
+  height: 28%;
+  border-radius: 50%;
+  background: var(--valid-dot);
+  pointer-events: none;
+  animation: pop-in 0.15s ease-out;
+}
+
+@keyframes pop-in {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.piece {
+  width: 85%;
+  height: 85%;
+  pointer-events: none;
+  transition: transform 0.12s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  animation: piece-appear 0.2s ease-out;
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes piece-appear {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+@keyframes slide-from {
+  from { transform: translate(var(--dx), var(--dy)); }
+  to   { transform: translate(0, 0); }
+}
+
+.piece-moving {
+  animation: slide-from 0.2s ease-out;
+}
+
+.piece-selected {
+  transform: scale(1.15);
+  filter: drop-shadow(0 3px 8px rgba(255,220,60,0.7));
+}
+

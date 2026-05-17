@@ -1,0 +1,32 @@
+.captured {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  
+  .captured-label {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  
+  .captured-pieces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+  
+  .captured-piece {
+    font-size: 18px;
+  }
+  
+  .captured-empty {
+    font-size: 11px;
+    color: var(--text-muted);
+  }

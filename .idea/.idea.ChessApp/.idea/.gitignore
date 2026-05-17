@@ -1,0 +1,22 @@
+﻿# Rider IDE
+.idea/
+
+# .NET build outputs
+**/bin/
+**/obj/
+
+# Node modules
+**/node_modules/
+
+# API keys - nu face commit cu cheia API
+ChessApp.Server/appsettings.json
+
+# Vite build output
+chessapp.client/dist/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
