@@ -1,27 +1,15 @@
-﻿# Rider IDE
-.idea/
-
-# .NET build outputs
-**/bin/
-**/obj/
-
-# Node modules
-**/node_modules/
-
-# API keys - nu face commit cu cheia API
-ChessApp.Server/appsettings.json
-
-# Vite build output
-chessapp.client/dist/
-
-# Logs
-*.log
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Word temporary files
-~$*.docx
-~$*.doc
-*.tmp
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.ChessApp.iml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Ignored default folder with query files
+/queries/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
